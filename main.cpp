@@ -12,7 +12,6 @@ using namespace std;
 int main()
 {
     int x, y;                       // Stores user-inputted data.
-    string planeLocation;           // Stores coordinate plane locations.
 
     // Asks the user for a coordinate.
     cout << "Enter an integer coordinate: x y\n";
@@ -21,47 +20,33 @@ int main()
 
     // Origin.
     if (x == 0 && y == 0)
-    {
         cout << "(" << x << "," << y << ")" << " is on the origin.\n";
-    }
+
 
     // First Quadrant.
     if (x > 0 && y > 0)
-    {
         cout << "(" << x << "," << y << ")" << " is in the first quadrant.\n";
-    }
+
 
     // Second Quadrant.
     if (x < 0 && y > 0)
-    {
         cout << "(" << x << "," << y << ")" << " is in the second quadrant.\n";
-    }
 
     // Third Quadrant.
     if (x < 0 && y < 0)
-    {
         cout << "(" << x << "," << y << ")" << " is in the third quadrant.\n";
-    }
 
     // Fourth Quadrant.
     if (x > 0 && y < 0)
-    {
         cout << "(" << x << "," << y << ")" << " is in the fourth quadrant.\n";
-    }
 
     // X-Axis.
     if (y == 0 && x != 0)
-    {
-        planeLocation = "x-axis";
         cout << "(" << x << "," << y << ")" << " is on the x-axis.\n";
-    }
 
     // Y-Axis.
     if (x == 0 && y != 0)
-    {
-        planeLocation = "y-axis";
         cout << "(" << x << "," << y << ")" << " is on the y-axis.\n";
-    }
 
     return 0;
 }
