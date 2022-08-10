@@ -13,8 +13,8 @@ char validateEntry (char);
 
 int main()
 {
-    int x, y;
-    char yesNo;
+    int x = 0, y = 0;
+    char yesNo = '\0';
 
     do
     {
