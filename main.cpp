@@ -32,7 +32,7 @@ int main()
     }
 
     // Second Quadrant.
-    if (x > 0 && y < 0)
+    if (x < 0 && y > 0)
     {
         cout << "(" << x << "," << y << ")" << " is in the second quadrant.\n";
     }
@@ -44,7 +44,7 @@ int main()
     }
 
     // Fourth Quadrant.
-    if (x < 0 && y > 0)
+    if (x > 0 && y < 0)
     {
         cout << "(" << x << "," << y << ")" << " is in the fourth quadrant.\n";
     }
