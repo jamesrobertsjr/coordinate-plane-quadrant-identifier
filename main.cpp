@@ -30,7 +30,6 @@ int main()
         if (x > 0 && y > 0)
             cout << "(" << x << "," << y << ")" << " is in the first quadrant.\n";
 
-
         // Second Quadrant.
         if (x < 0 && y > 0)
             cout << "(" << x << "," << y << ")" << " is in the second quadrant.\n";
