@@ -18,15 +18,18 @@ int main() {
     char yesNo = '\0';
 
     do {
+        // Gets data.
         cout << "Enter an integer coordinate: x y\n";
         cin >> x >> y;
         
+        // Outputs data.
         cout << "(" << x << "," << y << ")" << " Location: ";
         cout << findQuadrant(x,y) << endl;
 
+        // Asks to run again.
         cout << "Would you like to run again? (Y or N) ";
         cin >> yesNo;
-        
+
     } while (validateRunAgain(yesNo) == 'Y');
 
     return 0;
