@@ -1,4 +1,5 @@
 //
+// quadrantIdentifier.cpp
 // Author: jameserv
 //
 
@@ -8,73 +9,53 @@
 #include <cmath>
 using namespace std;
 
-void findQuadrant (int, int);
-char validateEntry (char);
+// Function prototypes.
+string findQuadrant (int, int);
+char validateRunAgain (char);
 
-int main()
-{
+int main() {
     int x = 0, y = 0;
     char yesNo = '\0';
 
-    do
-    {
-        // Asks the user for a coordinate.
+    do {
         cout << "Enter an integer coordinate: x y\n";
         cin >> x >> y;
         
-        // Finds coordinate quadrant.
-        findQuadrant(x, y);
+        cout << "(" << x << "," << y << ")" << " Location: ";
+        cout << findQuadrant(x,y) << endl;
 
-        // Asks to run again.
         cout << "Would you like to run again? (Y or N) ";
         cin >> yesNo;
+        
+    } while (validateRunAgain(yesNo) == 'Y');
 
-    } while (validateEntry(yesNo) == 'Y');
-    
     return 0;
 }
 
-void findQuadrant(int x, int y)
-{
-    // Origin.
-    if (x == 0 && y == 0)
-        cout << "(" << x << "," << y << ")" << " is on the origin.\n";
-
-    // First Quadrant.
-    if (x > 0 && y > 0)
-        cout << "(" << x << "," << y << ")" << " is in the first quadrant.\n";
-
-    // Second Quadrant.
-    if (x < 0 && y > 0)
-        cout << "(" << x << "," << y << ")" << " is in the second quadrant.\n";
-
-    // Third Quadrant.
-    if (x < 0 && y < 0)
-        cout << "(" << x << "," << y << ")" << " is in the third quadrant.\n";
-
-    // Fourth Quadrant.
-    if (x > 0 && y < 0)
-        cout << "(" << x << "," << y << ")" << " is in the fourth quadrant.\n";
-
-    // X-Axis.
-    if (y == 0 && x != 0)
-        cout << "(" << x << "," << y << ")" << " is on the x-axis.\n";
-
-    // Y-Axis.
-    if (x == 0 && y != 0)
-        cout << "(" << x << "," << y << ")" << " is on the y-axis.\n";   
+string findQuadrant(int x, int y) {
+    if (x > 0 && y > 0) {
+        return "First Quadrant";
+    } else if (x < 0 && y > 0) {
+        return "Second Quadrant";
+    } else if (x < 0 && y < 0) {
+        return "Third Quadrant";
+    } else if (x > 0 && y < 0) {
+        return "Fourth Quadrant";
+    } else if (y == 0 && x != 0) {
+        return "X-Axis";
+    } else if (x == 0 && y != 0) {
+        return "Y-Axis";
+    } else {
+        return "Origin";
+    }
 }
 
 // Validates user entry for re-running program.
-char validateEntry (char yesNo)
-{
-    // Checks if the user submitted a proper entry. If not, it asks for a valid entry.
-    while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N')
-    {
-        cout << "ERROR. Invalid entry. Please try again." << endl;
+char validateRunAgain (char yesNo) {
+    while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N') {
+        cout << "ERROR: Invalid Entry. Please try again." << endl;
         cin >> yesNo;
     }
-    
-    // Returns the valid entry.
+
     return toupper(yesNo);
 }
