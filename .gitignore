@@ -34,3 +34,5 @@
 # Other
 .DS_Store
 .vscode
+quadrantIdentifier
+quadrantIdentifier.dSYM/Contents/Info.plist
