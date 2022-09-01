@@ -27,7 +27,7 @@ int main() {
         cin >> user.xCoord >> user.yCoord;
         
         // Outputs data.
-        cout << "(" << x << "," << y << ")" << " Location: ";
+        cout << "(" << user.xCoord << "," << user.yCoord << ")" << " Location: ";
         cout << findQuadrant(user.xCoord,user.yCoord) << endl;
 
         // Asks to run again.
