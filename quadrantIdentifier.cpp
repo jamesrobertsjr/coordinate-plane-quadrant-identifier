@@ -13,24 +13,28 @@ using namespace std;
 string findQuadrant (int, int);
 char validateRunAgain (char);
 
+struct UserEntry {
+    int xCoord, yCoord;
+    char yesNo;
+};
+
 int main() {
-    int x = 0, y = 0;
-    char yesNo = '\0';
+    UserEntry user;
 
     do {
         // Gets data.
         cout << "Enter an integer coordinate: x y\n";
-        cin >> x >> y;
+        cin >> user.xCoord >> user.yCoord;
         
         // Outputs data.
         cout << "(" << x << "," << y << ")" << " Location: ";
-        cout << findQuadrant(x,y) << endl;
+        cout << findQuadrant(user.xCoord,user.yCoord) << endl;
 
         // Asks to run again.
         cout << "Would you like to run again? (Y or N) ";
-        cin >> yesNo;
+        cin >> user.yesNo;
 
-    } while (validateRunAgain(yesNo) == 'Y');
+    } while (validateRunAgain(user.yesNo) == 'Y');
 
     return 0;
 }
