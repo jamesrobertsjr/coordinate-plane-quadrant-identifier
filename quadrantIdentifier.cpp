@@ -20,7 +20,7 @@ struct UserEntry {
 
 int main() {
     UserEntry user;
-
+    
     do {
         // Gets data.
         cout << "Enter an integer coordinate: x y\n";
@@ -35,7 +35,6 @@ int main() {
         cin >> user.yesNo;
 
     } while (validateRunAgain(user.yesNo) == 'Y');
-
     return 0;
 }
 
@@ -63,6 +62,5 @@ char validateRunAgain (char yesNo) {
         cout << "ERROR: Invalid Entry. Please try again." << endl;
         cin >> yesNo;
     }
-
     return toupper(yesNo);
 }
