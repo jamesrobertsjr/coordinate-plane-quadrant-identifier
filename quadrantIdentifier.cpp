@@ -7,10 +7,9 @@
 #include <iomanip>
 #include <string>
 #include <cmath>
-using namespace std;
 
 // Function prototypes.
-string findQuadrant (int, int);
+std::string findQuadrant (int, int);
 char validateRunAgain (char);
 
 struct UserEntry {
@@ -23,22 +22,22 @@ int main() {
     
     do {
         // Gets data.
-        cout << "Enter an integer coordinate: x y\n";
-        cin >> user.xCoord >> user.yCoord;
+        std::cout << "Enter an integer coordinate: x y\n";
+        std::cin >> user.xCoord >> user.yCoord;
         
         // Outputs data.
-        cout << "(" << user.xCoord << "," << user.yCoord << ")" << " Location: ";
-        cout << findQuadrant(user.xCoord,user.yCoord) << endl;
+        std::cout << "(" << user.xCoord << "," << user.yCoord << ")" << " Location: ";
+        std::cout << findQuadrant(user.xCoord,user.yCoord) << std::endl;
 
         // Asks to run again.
-        cout << "Would you like to run again? (Y or N) ";
-        cin >> user.yesNo;
+        std::cout << "Would you like to run again? (Y or N) ";
+        std::cin >> user.yesNo;
 
     } while (validateRunAgain(user.yesNo) == 'Y');
     return 0;
 }
 
-string findQuadrant(int x, int y) {
+std::string findQuadrant(int x, int y) {
     if (x > 0 && y > 0) {
         return "First Quadrant";
     } else if (x < 0 && y > 0) {
@@ -59,8 +58,8 @@ string findQuadrant(int x, int y) {
 // Validates user entry for re-running program.
 char validateRunAgain (char yesNo) {
     while (toupper(yesNo) != 'Y' && toupper(yesNo) != 'N') {
-        cout << "ERROR: Invalid Entry. Please try again." << endl;
-        cin >> yesNo;
+        std::cout << "ERROR: Invalid Entry. Please try again." << std::endl;
+        std::cin >> yesNo;
     }
     return toupper(yesNo);
 }
